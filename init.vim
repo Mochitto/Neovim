@@ -2,11 +2,25 @@
 set number
 set relativenumber
 set scrolloff=10
+
 "Remaps"
+"Set leader key"
+let mapleader = " "
+
 "Keep cursor centered in the screen when navigating"
 nnoremap j jzz
 nnoremap k kzz
 nnoremap G Gzz
+
+"Wrap in given character"
+"Notice: vnoremap is both for visual line and visual mode. xnoremap is just
+"visual mode.
+vnoremap <leader>( <ESC>`>a)<ESC>`<i(<ESC>
+vnoremap <leader>[ <ESC>`>a]<ESC>`<i[<ESC>
+vnoremap <leader>{ <ESC>`>a}<ESC>`<i{<ESC>
+vnoremap <leader>' <ESC>`>a'<ESC>`<i'<ESC>
+vnoremap <leader>" <ESC>`>a"<ESC>`<i"<ESC>
+
 "Auto close \", ', (, [, {"
 inoremap " ""<left>
 inoremap ' ''<left>
@@ -37,3 +51,7 @@ set listchars=tab:×·,trail:·
 
 "Plugins configuration"
 lua require("plugins")
+lua require("user.mason")
+lua require("user.mason-lspconfig")
+lua require("user.lspconfig")
+
