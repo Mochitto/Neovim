@@ -1,0 +1,6 @@
+require ("mochi.options")
+require ("mochi.keymaps")
+require ("mochi.plugins")
+require ("mochi.colorscheme")
+require ("mochi.cmp")
+require ("mochi.lsp")
