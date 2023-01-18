@@ -72,6 +72,24 @@ return packer.startup(function(use)
      -- Better input filed
     use {'stevearc/dressing.nvim'}
 
+    -- Git diffs
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+    -- Support for diagnostics errors
+    use 'folke/lsp-colors.nvim'
+    -- Diagnostics menu
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+        require("trouble").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
+
     -- Emoji picker
     use({
         "ziontee113/icon-picker.nvim",
@@ -89,7 +107,6 @@ return packer.startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     } -- Configured in telescope.lua
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
