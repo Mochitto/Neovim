@@ -44,6 +44,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate tabs
 keymap("n", "<S-l>", ":tabnext<CR>", opts)
 keymap("n", "<S-h>", ":tabprevious<CR>", opts)
+keymap("n", "<S-j>", "", opts) -- Added to remove default; super annoying
 
 -- Insert --
 -- Auto close ', ", (, [, { and put you inside of them
@@ -94,7 +95,7 @@ if not status_ok then
     vim.notify("Couldn't load telescope keybindings'")
     return
 end
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ff', "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})

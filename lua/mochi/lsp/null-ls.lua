@@ -14,6 +14,6 @@ null_ls.setup({
         formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
         formatting.black.with({ extra_args = { "--fast" } }),
         formatting.stylua,
-        diagnostics.flake8.with({ extra_args = { "--ignore=E501, E401" } }), -- Line too long and missing imports, taken care by pyright and black
+        diagnostics.flake8.with({ extra_args = { "--ignore=E501,E401" } }), -- Line too long and missing imports, taken care by pyright and black
     },
 })
