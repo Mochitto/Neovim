@@ -2,6 +2,12 @@ local servers = {
     "sumneko_lua",
     "pyright",
     "jsonls",
+    "html",
+    "emmet_ls",
+    "cssls",
+    "gopls",
+    "tsserver",
+    "marksman",
 }
 
 local settings = {
