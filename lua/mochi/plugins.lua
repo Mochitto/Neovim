@@ -74,6 +74,10 @@ return packer.startup(function(use)
     use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
     use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
 
+     -- Treesitter
+    use 'nvim-treesitter/nvim-treesitter'
+    use "nvim-treesitter/playground"
+
     -- Status bar
     use {
         'nvim-lualine/lualine.nvim',
